@@ -16,12 +16,14 @@ type Props = {
   onDesign:         () => void
   onUsernameChange: (name: string) => void
   onAccountDeleted: () => void
+  accentColor: string
 }
 
 export default function Header({
   activeTab, entries, onSwitch, onAdd,
   isOwner, username, userId, onDesign,
   onUsernameChange, onAccountDeleted,
+  accentColor,
 }: Props) {
   const [accountOpen, setAccountOpen] = useState(false)
 
@@ -66,10 +68,10 @@ export default function Header({
         </div>
 
         <div style={{ display:'flex', background:'#181818', border:'1px solid #222', borderRadius:'8px', overflow:'hidden', width:'fit-content' }}>
-          <button onClick={() => onSwitch('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? '#ff6b6b' : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+          <button onClick={() => onSwitch('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? accentColor : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
             Movies ({movieCount})
           </button>
-          <button onClick={() => onSwitch('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? '#ff6b6b' : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+          <button onClick={() => onSwitch('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? accentColor : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
             TV Shows ({tvCount})
           </button>
         </div>

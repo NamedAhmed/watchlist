@@ -35,10 +35,10 @@ export default function PublicProfile({ username, entries, layout }: Props) {
           </div>
 
           <div style={{ display:'flex', background:'#181818', border:'1px solid #222', borderRadius:'8px', overflow:'hidden', width:'fit-content' }}>
-            <button onClick={() => setActiveTab('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? 'layout.accentColor' : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+            <button onClick={() => setActiveTab('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? layout.accentColor : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
               Movies ({movieCount})
             </button>
-            <button onClick={() => setActiveTab('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? 'layout.accentColor' : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+            <button onClick={() => setActiveTab('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? layout.accentColor : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
               TV Shows ({tvCount})
             </button>
           </div>

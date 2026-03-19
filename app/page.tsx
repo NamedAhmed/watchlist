@@ -116,6 +116,7 @@ export default function Home() {
           onDesign={() => router.push('/design')}
           onUsernameChange={setUsername}
           onAccountDeleted={handleAccountDeleted}
+          accentColor={layout.accentColor}
         />
 
 
