@@ -37,12 +37,12 @@ export default function Header({
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'24px', gap:'16px', flexWrap:'wrap' }}>
           <h1 style={{ fontFamily:'Georgia, serif', fontSize:'2.4rem', fontWeight:400, color:'#eaeaea' }}>
             {username ? <>{username}&apos;s </> : "Ahmed's " }
-            <em style={{ fontStyle:'italic', color:'#ff6b6b' }}>Watchlist</em>
+            <em style={{ fontStyle:'italic', color: accentColor }}>Watchlist</em>
           </h1>
 
           <div style={{ display:'flex', gap:'10px', alignItems:'center' }}>
             {isOwner && (
-              <button onClick={onAdd} style={{ padding:'9px 20px', background:'#ff6b6b', color:'#fff', border:'none', borderRadius:'8px', fontSize:'0.82rem', fontWeight:500, cursor:'pointer' }}>
+              <button onClick={onAdd} style={{ padding:'9px 20px', background: accentColor, color:'#fff', border:'none', borderRadius:'8px', fontSize:'0.82rem', fontWeight:500, cursor:'pointer' }}>
                 + Add
               </button>
             )}
