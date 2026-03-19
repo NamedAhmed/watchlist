@@ -25,20 +25,20 @@ export default function PublicProfile({ username, entries, layout }: Props) {
         <div style={{ marginBottom:'36px' }}>
           <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'24px' }}>
             <h1 style={{ fontFamily:'Georgia, serif', fontSize:'2.4rem', fontWeight:400, color:'#eaeaea' }}>
-              {username}&apos;s <em style={{ fontStyle:'italic', color:'#ff6b6b' }}>Watchlist</em>
+              {username}&apos;s <em style={{ fontStyle: 'italic', color: layout.accentColor }}>Watchlist</em>
             </h1>
             <a href="/" style={{ padding:'9px 20px', background:'transparent', color:'#555', border:'1px solid #2a2a2a', borderRadius:'8px', fontSize:'0.82rem', textDecoration:'none' }}
-              onMouseEnter={e => { e.currentTarget.style.color='#ff6b6b'; e.currentTarget.style.borderColor='#ff6b6b' }}
+              onMouseEnter={e => { e.currentTarget.style.color=layout.accentColor; e.currentTarget.style.borderColor=layout.accentColor }}
               onMouseLeave={e => { e.currentTarget.style.color='#555';    e.currentTarget.style.borderColor='#2a2a2a' }}>
               Make your own
             </a>
           </div>
 
           <div style={{ display:'flex', background:'#181818', border:'1px solid #222', borderRadius:'8px', overflow:'hidden', width:'fit-content' }}>
-            <button onClick={() => setActiveTab('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? '#ff6b6b' : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+            <button onClick={() => setActiveTab('movies')} style={{ padding:'9px 24px', background: activeTab==='movies' ? 'layout.accentColor' : 'transparent', color: activeTab==='movies' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
               Movies ({movieCount})
             </button>
-            <button onClick={() => setActiveTab('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? '#ff6b6b' : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
+            <button onClick={() => setActiveTab('tv')} style={{ padding:'9px 24px', background: activeTab==='tv' ? 'layout.accentColor' : 'transparent', color: activeTab==='tv' ? '#fff' : '#555', border:'none', cursor:'pointer', fontSize:'0.82rem', fontWeight:500 }}>
               TV Shows ({tvCount})
             </button>
           </div>
