@@ -53,7 +53,7 @@ export default function Header({
               </button>
             )}
             {isOwner && (
-              <button onClick={onDesign} style={{ padding:'9px 16px', background:'transparent', border:'1px solid #2a2a2a', borderRadius:'8px', color:'#555', fontSize:'0.82rem', cursor:'pointer' }}>
+              <button onClick={onDesign} style={{ padding:'9px 16px', background:'transparent', border:'1px solid #2a2a2a', borderRadius:'8px', color:'#888', fontSize:'0.82rem', cursor:'pointer' }}>
                 Design card
               </button>
             )}
