@@ -116,7 +116,7 @@ export default function Home() {
           isOwner={!!user}
           username={username}
           userId={user?.id ?? null}
-          onDesign={() => setPicksEditorOpen(true)}
+          onDesign={() => router.push('/design')}
           onDiscover={() => router.push('/discover')}
           onUsernameChange={setUsername}
           onAccountDeleted={handleAccountDeleted}
