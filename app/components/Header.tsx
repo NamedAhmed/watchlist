@@ -17,13 +17,14 @@ type Props = {
   onUsernameChange: (name: string) => void
   onAccountDeleted: () => void
   accentColor: string
+  onDiscover:       () => void
 }
 
 export default function Header({
   activeTab, entries, onSwitch, onAdd,
   isOwner, username, userId, onDesign,
   onUsernameChange, onAccountDeleted,
-  accentColor,
+  accentColor, onDiscover,
 }: Props) {
   const [accountOpen, setAccountOpen] = useState(false)
 
@@ -44,6 +45,11 @@ export default function Header({
             {isOwner && (
               <button onClick={onAdd} style={{ padding:'9px 20px', background: accentColor, color:'#fff', border:'none', borderRadius:'8px', fontSize:'0.82rem', fontWeight:500, cursor:'pointer' }}>
                 + Add
+              </button>
+            )}
+            {isOwner && (
+              <button onClick={onDiscover} style={{ padding:'9px 16px', background:'transparent', border:'1px solid #2a2a2a', borderRadius:'8px', color:'#888', fontSize:'0.82rem', cursor:'pointer' }}>
+                Discover
               </button>
             )}
             {isOwner && (

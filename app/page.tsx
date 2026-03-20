@@ -58,14 +58,17 @@ export default function Home() {
 
   async function handleSave(entry: Entry) {
     if (!user) return
-    const exists = entries.find(e => e.id === entry.id)
-    if (!exists) {
-      const maxRank = entries.filter(e => e.type === entry.type).reduce((m, e) => Math.max(m, e.rank), 0)
-      entry.rank = maxRank + 1
-    }
     await saveEntry(entry, user.id)
-    setEntries(prev => exists ? prev.map(e => e.id === entry.id ? entry : e) : [...prev, entry])
-    setModalOpen(false); setEditing(null)
+    setEntries(prev => {
+      const exists = prev.find(e => e.id === entry.id)
+      if (exists) {
+        return prev.map(e => e.id === entry.id ? entry : e)
+      }
+      const rank = prev.filter(e => e.type === entry.type).length + 1
+      return [...prev, { ...entry, rank }]
+    })
+    setModalOpen(false)
+    setEditing(null)
   }
 
   async function handleDelete(id: string) {
@@ -109,11 +112,12 @@ export default function Home() {
           activeTab={activeTab}
           entries={entries}
           onSwitch={setActiveTab}
-          onAdd={() => { setEditing(null); setModalOpen(true) }}
+          onAdd={() => setModalOpen(true)}
           isOwner={!!user}
           username={username}
           userId={user?.id ?? null}
-          onDesign={() => router.push('/design')}
+          onDesign={() => setPicksEditorOpen(true)}
+          onDiscover={() => router.push('/discover')}
           onUsernameChange={setUsername}
           onAccountDeleted={handleAccountDeleted}
           accentColor={layout.accentColor}
